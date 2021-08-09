@@ -6,9 +6,7 @@
     "description": "Enforce Spot compute to save cost",
     "metadata": {
       "category": "Compute",
-      "createdBy": "be2b29b2-64ce-4c35-af70-297f1718cd65",
       "createdOn": "2021-08-05T07:41:20.5501723Z",
-      "updatedBy": "be2b29b2-64ce-4c35-af70-297f1718cd65",
       "updatedOn": "2021-08-05T08:28:38.3887347Z"
     },
     "parameters": {},
@@ -30,5 +28,5 @@
       }
     }
   },
-  "type": "Microsoft.Authorization/policyDefinitions",
+  "type": "Microsoft.Authorization/policyDefinitions"
 }
