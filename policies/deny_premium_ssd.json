@@ -1,0 +1,31 @@
+{
+  "properties": {
+    "displayName": "Deny Premium SSD",
+    "policyType": "Custom",
+    "mode": "All",
+    "metadata": {
+      "category": "Compute",
+      "createdOn": "2021-08-01T14:22:08.6910136Z",
+      "updatedOn": "2021-08-05T13:09:43.545457Z"
+    },
+    "parameters": {},
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.Compute/disks"
+          },
+          {
+            "field": "Microsoft.Compute/disks/sku.name",
+            "equals": "Premium_LRS"
+          }
+        ]
+      },
+      "then": {
+        "effect": "deny"
+      }
+    }
+  },
+  "type": "Microsoft.Authorization/policyDefinitions"
+}
