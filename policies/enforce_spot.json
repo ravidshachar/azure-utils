@@ -1,0 +1,34 @@
+{
+  "properties": {
+    "displayName": "Enforce Spot",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "Enforce Spot compute to save cost",
+    "metadata": {
+      "category": "Compute",
+      "createdBy": "be2b29b2-64ce-4c35-af70-297f1718cd65",
+      "createdOn": "2021-08-05T07:41:20.5501723Z",
+      "updatedBy": "be2b29b2-64ce-4c35-af70-297f1718cd65",
+      "updatedOn": "2021-08-05T08:28:38.3887347Z"
+    },
+    "parameters": {},
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.Compute/virtualMachines"
+          },
+          {
+            "field": "Microsoft.Compute/virtualMachines/priority",
+            "notEquals": "Spot"
+          }
+        ]
+      },
+      "then": {
+        "effect": "deny"
+      }
+    }
+  },
+  "type": "Microsoft.Authorization/policyDefinitions",
+}
